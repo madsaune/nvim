@@ -30,7 +30,6 @@ set encoding=utf-8
 set termguicolors
 set guicursor=
 set background=dark
-colorscheme togglebit
 set regexpengine=1
 set noshowcmd
 
@@ -40,6 +39,7 @@ set expandtab
 set smartindent
 set autoindent
 set cursorline
+set mouse=
 
 set incsearch
 set ignorecase
@@ -61,10 +61,13 @@ set colorcolumn=120
 set updatetime=50
 set pyx=3
 
+colorscheme togglebit
+
 " Required for FZF
 set rtp+=/usr/local/bin/fzf
 
-nnoremap <C-p> :GFiles<CR>
+" nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :FZF<CR>
 
 " --- UltiSnips ---
 let g:UltiSnipsExpandTrigger="<c-e>"
@@ -73,7 +76,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " --- FILETYPES ---
-
 augroup dotpwsh
     autocmd!
     autocmd Filetype css setlocal tabstop=2
@@ -118,14 +120,16 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <silent> <leader>+ :vertical resize +5<CR>
-nnoremap <silent> <leader>- :vertical resize -5<CR>
+
+nmap <C-h> :vertical resize -4<CR>
+nmap <C-l> :vertical resize +4<CR>
+nmap <C-k> :resize +4<CR>
+nmap <C-j> :resize -4<CR>
 
 " Tabbing in visual mode
 vmap <Tab> >gv
 
 " --- COC ----
-
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
