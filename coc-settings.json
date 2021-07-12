@@ -1,0 +1,32 @@
+{
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "css",
+    "markdown",
+    "html"
+  ],
+  "html.format.enable": true,
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.codeFormatting.useConstantStrings": true,
+  "powershell.codeFormatting.newLineAfterCloseBrace": false,
+  "javascript.format.enabled": true,
+  "prettier.singleQuote": true,
+  "html.format.wrapAttributes": "force-aligned"
+}
