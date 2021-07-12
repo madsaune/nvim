@@ -11,11 +11,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'} " this is for auto complete, prettier and tslinting
-Plug 'jiangmiao/auto-pairs' "this will auto close ( [ {
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
@@ -125,6 +124,10 @@ nmap <C-h> :vertical resize -4<CR>
 nmap <C-l> :vertical resize +4<CR>
 nmap <C-k> :resize +4<CR>
 nmap <C-j> :resize -4<CR>
+
+nmap <leader>" ysiw"
+nmap <leader>] ysiw]
+nmap <leader>} ysiw}
 
 " Tabbing in visual mode
 vmap <Tab> >gv
