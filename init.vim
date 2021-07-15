@@ -45,6 +45,7 @@ set guicursor=
 set background=dark
 set regexpengine=1
 set noshowcmd
+set cmdheight=2
 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -59,27 +60,46 @@ set ignorecase
 set smartcase
 set hlsearch
 
-set clipboard=unnamedplus
+" integrate vim clipboard with system clipboard
+set clipboard+=unnamedplus
 
-set number
+" display title of current file in terminal title bar
+set title
+
 set hidden
 set noerrorbells
 set nowrap
 set noswapfile
 set nobackup
+set nowritebackup
 set scrolloff=8
-set signcolumn=yes
+set signcolumn=auto
 set splitbelow splitright
-set colorcolumn=120
 set updatetime=50
 set pyx=3
 
-colorscheme togglebit
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
+" Always show status line
+set laststatus=2
+
+" Format status line to show current file
+set statusline=\ %f
+
+" reload file if changed from outside
+au FocusGained,BufEnter * :checktime
+
+" stop results highlighting after cursor moves
+let g:incsearch#auto_nohlsearch = 1
+
+" colorscheme togglebit
+colorscheme molokai
 
 " Required for FZF
 set rtp+=/usr/local/bin/fzf
 
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-f> :GFiles<CR>
 " nnoremap <C-p> :FZF<CR>
 
 " --- UltiSnips ---
@@ -87,6 +107,40 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" --- VIM-GO
+" disable all linters as that is taken care of by coc.nvim
+let g:go_diagnostics_enabled = 0
+let g:go_metalinter_enabled = []
+
+" don't jump to errors after metalinter is invoked
+let g:go_jump_to_error = 0
+
+" run go imports on file save
+let g:go_fmt_command = "goimports"
+"
+" automatically highlight variable your cursor is on
+let g:go_auto_sameids = 0
+
+" syntax highlighting
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+autocmd BufEnter *.go nmap <leader>i  <Plug>(go-info)
+autocmd BufEnter *.go nmap <leader>ii  <Plug>(go-implements)
+autocmd BufEnter *.go nmap <leader>ci  <Plug>(go-describe)
+autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
+nmap <leader>cr <Plug>(coc-references)
+nmap <C-d> <Plug>(coc-definition)
+
+" Remap GoBack to C-a
+nmap <C-a> <C-o>
 
 " --- FILETYPES ---
 augroup dotpwsh
@@ -108,18 +162,22 @@ let g:vim_markdown_folding_disabled=1
 " --- NERDTree ---
 let NERDTreeShowHidden=1
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-p> :NERDTreeToggle<CR>
 
 " --- TABS ---
 autocmd TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <C-l> :exe "tabn ".g:lasttab<CR>
 vnoremap <silent> <C-l> :exe "tabn ".g:lasttab<CR>
 
-nnoremap <leader>tp :tabp<CR>
-nnoremap <leader>tn :tabn<CR>
+nnoremap <C-Right> :tabn<CR>
+nnoremap <C-Left> :tabp<CR>
 
 " --- KEY BINDINGS ---
 let mapleader=" "
+"
+" map Ctrl+u to redo
+nnoremap <C-u> :redo<CR>
+
 nnoremap <CR> :nohlsearch<CR><CR>
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+1<CR>
@@ -142,10 +200,24 @@ nmap <leader>" ysiw"
 nmap <leader>] ysiw]
 nmap <leader>} ysiw}
 
+nmap <leader>gs :tabe<CR>:Gstatus<CR>
+nmap <leader>gc :Gcommit<CR>
+
 " Tabbing in visual mode
 vmap <Tab> >gv
 
 " --- COC ----
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+autocmd ColorScheme * highlight CocErrorFloat guifg=#ffffff
+autocmd ColorScheme * highlight CocInfoFloat guifg=#ffffff
+autocmd ColorScheme * highlight CocWarningFloat guifg=#ffffff
+autocmd ColorScheme * highlight SignColumn guibg=#adadad
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -159,7 +231,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Show warnings
-nnoremap <leader>w :CocDiagnostics<CR>
+nnoremap <leader>d :CocDiagnostics<CR>
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
