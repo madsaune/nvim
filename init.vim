@@ -88,7 +88,6 @@ augroup dotpwsh
     autocmd Filetype javascript setlocal tabstop=2
     autocmd Filetype javascript setlocal softtabstop=2
     autocmd Filetype javascript setlocal shiftwidth=2
-    autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 augroup END
 
 " --- MARKDOWN ---
