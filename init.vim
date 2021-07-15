@@ -22,7 +22,19 @@ Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
-let g:coc_global_extensions = ['coc-marketplace', 'coc-powershell', 'coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-vetur']  " list of CoC extensions needed
+" list of CoC extensions needed
+let g:coc_global_extensions = [
+\ 'coc-marketplace',
+\ 'coc-go',
+\ 'coc-powershell',
+\ 'coc-tslint-plugin',
+\ 'coc-tsserver',
+\ 'coc-css',
+\ 'coc-html',
+\ 'coc-json',
+\ 'coc-prettier',
+\ 'coc-vetur'
+\ ]
 
 " --- GENERAL ---
 syntax on
