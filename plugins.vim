@@ -17,6 +17,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " --- UltiSnips ---

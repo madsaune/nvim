@@ -35,7 +35,7 @@ set mouse=
 set incsearch
 set ignorecase
 set smartcase
-set hlsearch
+set nohlsearch
 
 " integrate vim clipboard with system clipboard
 set clipboard+=unnamedplus
