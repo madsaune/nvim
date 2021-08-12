@@ -18,6 +18,7 @@ Plug 'SirVer/ultisnips'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " --- UltiSnips ---
@@ -58,7 +59,6 @@ autocmd BufEnter *.go nmap <leader>cc  <Plug>(go-callers)
 " --- FZF
 " Required for FZF
 set rtp+=/usr/local/bin/fzf
-
 
 " --- MARKDOWN ---
 let g:vim_markdown_folding_disabled=1
