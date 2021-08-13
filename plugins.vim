@@ -62,7 +62,11 @@ set rtp+=/usr/local/bin/fzf
 
 " --- MARKDOWN ---
 let g:vim_markdown_folding_disabled=1
+au BufEnter,BufNewFile *.md setlocal wrap
 
 " --- NERDTree ---
 let NERDTreeShowHidden=1
+
+" --- VIM-TERRAFORM ---
+let g:terraform_fmt_on_save = 1
 
