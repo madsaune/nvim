@@ -3,7 +3,7 @@ syntax on
 filetype plugin indent on
 
 " colorscheme togglebit
-colorscheme molokai
+colorscheme gruvbox
 
 set encoding=utf-8
 set termguicolors
