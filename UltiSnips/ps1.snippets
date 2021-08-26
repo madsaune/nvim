@@ -1,0 +1,56 @@
+snippet cmt
+# ----------------------------------------------------------------
+# $1
+#
+# $2
+# ----------------------------------------------------------------
+endsnippet
+
+snippet chelp
+<#
+.SYNOPSIS
+$1
+
+.DESCRIPTION
+$2
+
+.PARAMETER $3
+$4
+
+.INPUTS
+None. You cannot pipe objects to Update-Month.ps1.
+
+.OUTPUTS
+None. Update-Month.ps1 does not generate any output.
+
+.EXAMPLE
+PS> .\Update-Month.ps1
+
+.EXAMPLE
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+
+.LINK
+http://www.fabrikam.com/extension.html
+
+#>
+endsnippet
+
+snippet func
+function $1 {
+	[CmdletBinding()]
+	Param(
+		[Parameter()]
+		[$2]
+		$3
+	)
+
+	begin {}
+
+	process {
+		$4
+	}
+
+	end {}
+endsnippet
+
+
