@@ -1,4 +1,7 @@
 {
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  },
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
@@ -23,6 +26,7 @@
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.codeFormatting.useConstantStrings": true,
   "powershell.codeFormatting.newLineAfterCloseBrace": false,
+  "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
   "javascript.preferences.quoteStyle": "single",
   "prettier.singleQuote": true,
   "html.format.wrapAttributes": "force-aligned"
