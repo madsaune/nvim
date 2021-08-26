@@ -74,8 +74,11 @@ set updatetime=50
 set pyx=3
 
 " display colorcolumn at 110 characters
-set colorcolumn=110
+set colorcolumn=115
 highlight ColorColumn ctermbg=darkgray
+
+" Make comments use italic
+highlight Comment cterm=italic gui=italic
 
 " Always show status line
 set laststatus=2
