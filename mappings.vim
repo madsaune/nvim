@@ -1,6 +1,6 @@
 let mapleader=" "
 
-nnoremap <C-f> :GFiles<CR>
+nnoremap <C-f> :Files<CR>
 
 nmap <leader>cr <Plug>(coc-references)
 
