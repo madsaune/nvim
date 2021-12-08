@@ -17,7 +17,8 @@
     "css",
     "json",
     "markdown",
-    "go"
+    "go",
+    "ps1"
   ],
   "suggest.noselect": false,
   "diagnostic.warningSign": "!",
@@ -28,6 +29,7 @@
   "powershell.codeFormatting.newLineAfterCloseBrace": false,
   "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
   "javascript.preferences.quoteStyle": "single",
+  "prettier.printWidth": 120,
   "prettier.singleQuote": true,
   "html.format.wrapAttributes": "force-aligned"
 }
