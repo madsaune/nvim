@@ -19,6 +19,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " --- UltiSnips ---

@@ -4,6 +4,7 @@ filetype plugin indent on
 
 " colorscheme togglebit
 colorscheme gruvbox
+" colorscheme dracula
 
 set encoding=utf-8
 set termguicolors
