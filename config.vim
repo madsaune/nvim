@@ -11,6 +11,8 @@ set termguicolors
 set guicursor=
 set background=dark
 set regexpengine=1
+set foldmethod=indent
+set foldlevel=5
 
 " dont show commands in lower right corner
 set noshowcmd
