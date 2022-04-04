@@ -31,5 +31,6 @@
   "javascript.preferences.quoteStyle": "single",
   "prettier.printWidth": 120,
   "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
   "html.format.wrapAttributes": "force-aligned"
 }
