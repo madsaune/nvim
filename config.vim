@@ -2,17 +2,16 @@
 syntax on
 filetype plugin indent on
 
-" colorscheme togglebit
-colorscheme gruvbox
-" colorscheme dracula
 
 set encoding=utf-8
 set termguicolors
-set guicursor=
+" set guicursor=
 set background=dark
 set regexpengine=1
-set foldmethod=indent
-set foldlevel=5
+
+let ayucolor="dark"
+colorscheme ayu
+" colorscheme gruvbox
 
 " dont show commands in lower right corner
 set noshowcmd
@@ -27,6 +26,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set autoindent
+
+" use 2 spaces for javascript
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " hightlight active line
 set cursorline
