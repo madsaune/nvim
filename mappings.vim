@@ -2,6 +2,8 @@ let mapleader=" "
 
 nnoremap <C-f> :Files<CR>
 
+nnoremap <leader>b :Buffers<CR>
+
 nmap <leader>cr <Plug>(coc-references)
 
 " Remap GoBack to C-a
@@ -39,7 +41,7 @@ nmap <leader>" ysiw"
 nmap <leader>] ysiw]
 nmap <leader>} ysiw}
 
-nmap <leader>gs :tabe<CR>:Gstatus<CR>
+nmap <leader>gs :tabe<CR>:Git<CR>
 nmap <leader>gc :Gcommit<CR>
 
 " Tabbing in visual mode
