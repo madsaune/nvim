@@ -1,5 +1,6 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'gruvbox-community/gruvbox'
+Plug 'mhartington/oceanic-next'
 Plug 'hashivim/vim-terraform'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -20,6 +21,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ayu-theme/ayu-vim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " --- UltiSnips ---
