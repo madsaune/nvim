@@ -23,6 +23,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 call plug#end()
 
 " --- UltiSnips ---
