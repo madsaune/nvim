@@ -15,6 +15,9 @@ source $HOME/.config/nvim/coc.vim
 " TODO: split out into commands.vim
 augroup dotpwsh
     autocmd!
+    autocmd Filetype markdown setlocal tabstop=2
+    autocmd Filetype markdown setlocal shiftwidth=2
+    autocmd Filetype markdown setlocal softtabstop=2
     autocmd Filetype css setlocal tabstop=2
     autocmd Filetype css setlocal softtabstop=2
     autocmd Filetype css setlocal shiftwidth=2
