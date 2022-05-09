@@ -10,7 +10,8 @@ let g:coc_global_extensions = [
 \ 'coc-json',
 \ 'coc-prettier',
 \ 'coc-vetur',
-\ 'coc-docker'
+\ 'coc-docker',
+\ 'coc-pyright'
 \ ]
 
 " Add (Neo)Vim's native statusline support.
