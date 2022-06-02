@@ -10,14 +10,10 @@ filetype plugin indent on
 
 set encoding=utf-8
 set termguicolors
-" set guicursor=
 set background=dark
 set regexpengine=1
 
 colorscheme catppuccin
-" let ayucolor="dark"
-" colorscheme ayu
-" colorscheme gruvbox
 
 " dont show commands in lower right corner
 set noshowcmd
@@ -91,6 +87,9 @@ highlight ColorColumn ctermbg=darkgray
 " Make comments use italic
 highlight Comment cterm=italic gui=italic
 
+" Make background transparent
+highlight Normal guibg=none
+
 " Always show status line
 set laststatus=2
 
@@ -99,3 +98,12 @@ set statusline=\ %f
 
 " reload file if changed from outside
 au FocusGained,BufEnter * :checktime
+
+" enable folding
+set foldmethod=indent
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+
+" avoid human error
+:command! W w
