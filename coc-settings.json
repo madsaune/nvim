@@ -11,7 +11,7 @@
       "settings": {}
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "html", "css", "json", "markdown", "go", "ps1", "py"],
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "html", "css", "json", "markdown", "go", "ps1", "py", "php"],
   "suggest.noselect": false,
   "diagnostic.warningSign": "!",
   "diagnostic.infoSign": "?",
