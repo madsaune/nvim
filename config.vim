@@ -88,7 +88,10 @@ highlight ColorColumn ctermbg=darkgray
 highlight Comment cterm=italic gui=italic
 
 " Make background transparent
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 highlight Normal guibg=none
+highlight NonText guibg=none
 
 " Always show status line
 set laststatus=2
