@@ -35,6 +35,7 @@ return require('packer').startup(function()
   use 'junegunn/fzf.vim'
 
   use 'SirVer/ultisnips'
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
 
   use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
@@ -43,9 +44,13 @@ return require('packer').startup(function()
   use 'editorconfig/editorconfig-vim'
   use 'airblade/vim-gitgutter'
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'MichaHoffmann/tree-sitter-hcl'
+
+  use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
 
 end)
