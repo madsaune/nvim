@@ -14,8 +14,12 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'williamboman/nvim-lsp-installer'
 
+  use {'neoclide/coc.nvim', branch = 'release'}
+  use "lukas-reineke/lsp-format.nvim"
+
   -- color themes
   use {'catppuccin/nvim', as = 'catppuccin'}
+  use {'morhetz/gruvbox', as = 'gruvbox'}
 
   -- file explorer
   use 'preservim/nerdtree'
@@ -23,6 +27,10 @@ return require('packer').startup(function()
   -- markdown
   use 'godlygeek/tabular'
   use 'plasticboy/vim-markdown'
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   -- terraform
   use 'hashivim/vim-terraform'
@@ -51,6 +59,7 @@ return require('packer').startup(function()
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'MichaHoffmann/tree-sitter-hcl'
+  use 'tree-sitter/tree-sitter-python'
 
   use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
 

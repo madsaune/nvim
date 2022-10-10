@@ -3,7 +3,7 @@ local set = vim.opt
 vim.cmd [[
 	syntax on
 	filetype plugin indent on
-	colorscheme catppuccin
+	colorscheme gruvbox
 ]]
 
 set.encoding = 'utf-8'
@@ -77,6 +77,9 @@ set.pyx = 3
 -- display colorcolumn at 110 characters
 set.colorcolumn = '115'
 
+-- color column color
+vim.cmd('highlight ColorColumn ctermbg=darkgray')
+
 -- Always show status line
 set.laststatus = 2
 
@@ -100,6 +103,3 @@ vim.cmd [[
 
 -- Make comments use italic
 vim.cmd('highlight Comment cterm=italic gui=italic')
-
--- color column color
-vim.cmd('highlight ColorColumn ctermbg=darkgray')
